@@ -1,0 +1,23 @@
+{
+  "name": "magium/zf2-xpath-validator",
+  "description": "A simple validator to make sure that the provided text is valid Xpath",
+  "minimum-stability": "stable",
+  "license": "ASL-2.0",
+  "authors": [
+    {
+      "name": "Kevin Schroeder",
+      "email": "kschroeder@mirageworks.com",
+      "homepage": "http://magiumlib.com/",
+      "role": "Developer"
+    }
+  ],
+  "require" : {
+    "phpunit/phpunit" : "^4.1.0.0",
+    "zendframework/zend-validator": "~2.5"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "Magium\\Validate\\Xpath\\" : "lib/"
+    }
+  }
+}
