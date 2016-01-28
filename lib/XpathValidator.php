@@ -25,6 +25,8 @@ class XpathValidator extends AbstractValidator
     public function isValid($value)
     {
         try {
+            $errorLevel = error_reporting();
+            error_reporting(-1);
             $this->setValue($value);
             $doc = new \DOMDocument();
             $doc->loadXML('<test />');
@@ -34,8 +36,10 @@ class XpathValidator extends AbstractValidator
         } catch (\Exception $e) {
             $this->message = $e->getMessage();
             $this->error(self::INVALID);
+            error_reporting($errorLevel);
             return false;
         }
+        error_reporting($errorLevel);
         return true;
     }
 }
